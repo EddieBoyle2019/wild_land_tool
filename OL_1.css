@@ -1,0 +1,200 @@
+/*--------------------------------------*/
+/* OL_1.css		                     	   	*/
+/* UNIGIS MSc Dissertation web tool	    */
+/* CSS - colours1			                  */
+/* Date: 03/04/2017			                */
+/* Author: Eddie Boyle		   	          */
+/*--------------------------------------*/
+
+/* disable scrollbars in IE & Firefox */
+html, body {
+	overflow: hidden;
+    -ms-overflow-style: none;
+}
+
+/* disable scrollbars in Chrome*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+body { 
+	font-family: Calibri, Candara, Arial, sans-serif;
+	padding-top: 50px;
+	height: 100%; 
+}
+
+#footer {
+	position: absolute; 
+	bottom: 0; 
+	width: 100%;
+}
+
+#left-footer {
+	float: left;
+	padding-left: 10px;
+}
+
+#right-footer {
+	float: right;
+	padding-right: 10px;
+}    
+
+#map { 
+	position: absolute; top: 50px; right: 0; bottom: 55px; left: 0;
+}
+
+#help-slide {
+    position:absolute;
+    padding-left: 5px;
+    width:500px;
+    top:65px;
+    left:-500px;
+    background-color:#ffffff;
+    cursor:pointer;
+    overflow-x: hidden;
+}
+
+#data-slide {
+    position:absolute;
+    padding-left: 5px;
+    width:500px;
+    top:65px;
+    right:-500px;
+    background-color:#ffffff;
+    cursor:pointer;
+    overflow-x: hidden;
+}
+
+.fltlft {
+    float: left;
+    margin-right: 8px;
+    margin-left: 8px;
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+
+.brand {
+    height: 35px;
+    width: 180px;
+   
+}
+
+.title {
+	padding: 10px;
+	float: left;
+	font-size: 1.5em;
+}
+
+/* Twitter Bootstrap customised CSS */
+.navbar-inverse 
+{
+	height: 50px;
+	color: #ffffff;
+	background-color: #007fff;
+	position: absolute;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: #ffffff;
+  	background-color: #007fff;
+  	font-size: 17px;
+  	height: 50px;
+  	line-height: 17px;
+    padding-top: 8px;
+    padding-left: 10px;
+   	padding-right: 10px;
+   	padding-bottom: 0px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, 
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: #0066cc;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #0066cc;
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: transparent;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: #0066cc;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+
+.navbar-inverse .navbar-collapse {
+  background-color: #007fff;
+  border-color: #007fff;
+  border-top: 0px;
+}
+
+.openspaceol3-openspace-logo {
+          bottom: 190px;
+          left: 5px;
+          padding: 2px;
+          position: absolute;
+          background: transparent;
+}
+
+.ol-attribution ul {
+    margin: 0;
+    padding: 0 .5em;
+    font-size: 1rem;
+    line-height: 1.375em;
+    color: #000;
+    text-shadow: 0 0 2px #fff;
+}
+
+.ol-overviewmap {
+    left: 5px;
+    bottom: 30px;
+}
+
+.ol-scale-line {
+    /*background: rgba(0,60,136,.3);*/
+    background: gray;
+    border-radius: 4px;
+    bottom: 5px;
+    left: 95px;
+}
+
+.customExtentZoomClass {
+    /* Copied from ol-zoom-extent */
+    top: 4.643em;  
+    left: .5em;
+}
+
+.header {
+	float: left;
+}
+
+.headerLinks {
+	float: right;
+	padding-left: 30px;
+}
+
+.colourLink1 {
+	position: absolute;
+	top: 7px;
+	/*padding: 2px;*/
+	font-size: 0.8em;
+}
+
+.colourLink2 {
+  	position: absolute;
+  	top: 28px;
+	/*padding: 2px;*/
+	font-size: 0.8em;
+	color: black;
+}

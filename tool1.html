@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eddie Boyle MSc dissertation web tool client - OpenLayers/GeoServer WMS/Twitter Bootstrap</title>
+
+    <!--[if lt IE 9]>
+	  <p>This website requires Internet Explorer 9 or later</p>
+    <![endif]-->
+
+    <!-- Twitter Bootstrap CSS -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet" media="screen">
+    <!-- OpenLayers 3 CSS -->
+    <!--<link rel="stylesheet" href="http://openlayers.org/en/v3.18.2/css/ol.css" type="text/css">-->
+    <link rel="stylesheet" href="ol.css" type="text/css">
+ 	  <!-- Local custom CSS -->
+    <link rel="stylesheet" type="text/css" href="OL_1.css">
+    <link rel="stylesheet" type="text/css" href="OL_ext_1.css">
+    <!-- OS DataHub -->
+    <link rel="stylesheet" href="https://labs.os.uk/public/os-api-branding/v0.1.0/os-api-branding.css" />
+
+    <!-- jQuery library (necessary for Bootstrap) -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Twitter Bootstrap JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <!-- OpenLayers 3 JavaScript -->
+    <!--<script src="http://openlayers.org/en/v3.18.2/build/ol.js" type="text/javascript"></script>-->
+    <script src="ol.js" type="text/javascript"></script>
+    <!-- Proj4js and BNG EPSG code library JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/proj4js/2.2.1/proj4.js" type="text/javascript"></script>
+    <script src="http://epsg.io/27700.js"></script>
+    <!-- Local custom JavaScript -->
+    <script src="OL_ext_1.js"></script>
+    <script src="OL_1.js"></script>
+
+    <!-- OS DataHub -->
+    <script src="https://labs.os.uk/public/os-api-branding/v0.1.0/os-api-branding.js"></script>
+
+</head>
+
+<body>
+
+	<!-- Twitter Bootstrap RWD navbar header -->
+	<header id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+    	<div class="navbar-header">
+    		<div class="header">
+       		<div class="title">
+     			Wild Land in Scotland PPGIS tool</a>
+     		</div>
+     		<div class="headerLinks">
+     		<div class="colourLink1">
+     		low
+     		<img src="fadedBar1.png">
+     		high
+     		</div>
+     		<div class="colourLink2">
+     		low
+			<a href="tool2.html"><img src="fadedBar2.png"></a>
+     		high
+     		</div>
+     		</div>
+     		</div>
+      		<!-- used as the toggle for collapsed navbar menu -->
+      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        	<span class="sr-only">Toggle navigation</span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+      		</button>
+    	</div>
+    	<div class="navbar-collapse collapse">
+    		<!-- main navbar menu -->
+        	<nav>
+        		<ul class="menu nav navbar-nav">
+        		<!--<li class="first leaf active"><a href="/" class="active">Map<br/>&nbsp;</a></li>-->
+        		<li class="first leaf"></li>
+				<li class="leaf"></li>
+				<li class="leaf"></li>
+				<li class="leaf"></li>
+				<li class="last leaf"></li>
+				</ul>
+			</nav>
+    	</div>
+    </div>
+	</header>
+
+	<div class="container-fluid">
+
+	<div class="row-fluid">
+  		<div class="span12">
+    		<div id="map" class="map"></div>
+  		</div>
+	</div>
+
+	</div>
+
+	<!-- Footer with links to functions and options -->
+	<div id="footer">
+
+	<div id="left-footer">
+		<div class="open-help"><a href="#0">Help</a></div>
+		<div><a href="#0" id="export-png" download="map.png">Print map</a></div>
+	</div>
+
+	<div id="right-footer">
+		<div>UNIGIS MSc dissertation; Edward Boyle 2017</div>
+		<div class="open-data"><a href="#0">Data</a></div>
+	</div>
+
+	</div>
+
+    <script type="text/javascript">
+	    OL_map();
+    </script>
+
+    <!-- help slider contents -->
+    <div id="help-slide" class="slide1">
+    <b>Help</b><br/><br/>
+    <p>
+    Click on the <img src="ol_icon1.png"> icon at the top right of the map to open the layer tool. This tool contains a slider for each of the map layers to vary their opacity: <img src="ol_icon6.png">.
+    </p>
+
+     <p>
+     Boxes below each slider for the 4 'wild land' attribute layers show dynamically:
+     </p>
+
+    <ul>
+    <li>
+    The opacity of the current layer in % (0 = completely transparent, 100 = completely opaque): <img src="ol_icon8.png">
+    </li>
+    <li>
+    The normalised weighting of all 4 of the layers (all values always sum to a total of 1): <img src="ol_icon9.png">
+    </li>
+    </ul>
+
+	<p>
+	Layers can be turned on and off from appearing on the map using the checkbox next to the layer label. Click on the <img src="ol_icon4.png"> icon for each layer to see a pop-up window with a description of the layer. Click on the <img src="ol_icon1.png"> icon again to close the tool.
+    </p>
+
+    <p>
+	Click on the <img src="fadedBar1.png"> or <img src="fadedBar2.png"> legend in the header to use that range of colours for the 'wild land' attribute values. 'low' values mean less 'wild' and 'high' values mean more 'wild'.
+    </p>
+
+    <p>
+    Click on the <img src="ol_icon2.png"> icon next to the 'Base Layers' label to expand the layer tool to show layers which can be used as basemaps for the 4 'wild land' attribute layers. Click on the <img src="ol_icon3.png"> icon to reduce the layer tool again.
+    </p>
+
+    <p>
+    Click on the <img src="ol_icon5.png"> icon ('National Park') at any time to return the map to the boundaries of the Cairngorms National Park.
+    </p>
+
+    <p>
+	Click anywhere on this window to close it.
+	</p>
+
+    </div>
+
+    <!-- data slider contents -->
+    <div id="data-slide" class="slide2">
+   	<b>Data licencing information</b><br/><br/>
+    <b>OS Data Hub: OpenSpace datasets & Maps API</b>
+	<p>
+	Contains OS data &copy; Crown copyright and database right 2021.
+	</p>
+
+	<b>Corine Land Cover 2012 UK dataset</b>
+	<p>
+	Acknowledgement: Produced by the University of Leicester, The Centre for Landscape and Climate Research and Specto Natura and supported by Defra and the European Environment Agency under Grant Agreement 3541/B2012/R0-GIO/EEA.55055 with funding by the European Union. Citation: Cole, B.; King, S.; Ogutu, B.; Palmer, D.; Smith, G.; Balzter, H. (2015). Corine land cover 2012 for the UK, Jersey and Guernsey. NERC Environmental Information Data Centre. https://doi.org/10.5285/32533dd6-7c1b-43e1-b892-e80d61a5ea1d
+	</p>
+
+	<b>SNH datasets</b>
+	<p>
+	Copyright Scottish Natural Heritage Contains Ordnance Survey data &copy; Crown copyright and database right 2017.
+	<p>
+
+	<p>
+	All data resources are available under the Open Government Licence (OGL).
+	</p>
+
+	<p>
+	Click anywhere on this window to close it.
+	</p>
+	</div>
+
+</body>
+</html>
